@@ -1,0 +1,15 @@
+interface:
+  display_name: "Glade Amazon Data"
+  short_description: "Query normalized Amazon marketplace data"
+  default_prompt: "Use $amazon-data to research this Amazon product in the relevant marketplace."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "glade"
+      description: "Glade API hosted Amazon marketplace data tools"
+      transport: "streamable_http"
+      url: "https://gladeapi.com/api/mcp"
+
+policy:
+  allow_implicit_invocation: true
