@@ -14,7 +14,7 @@ import urllib.request
 DEFAULT_BASE_URL = "https://gladeapi.com"
 TIMEOUT_SECONDS = 30
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
-USER_AGENT = "glade-agent-skills/1.0 (+https://github.com/asterism-software/glade-agent-skills)"
+USER_AGENT = "glade-agent-skills/1.0 (+https://github.com/ricciflow-api/glade-agent-skills)"
 MARKETPLACES = ("US", "UK", "CA", "DE", "FR", "IT", "ES", "AU", "IN", "MX", "BR", "JP", "PL")
 SORTS = (
     "FEATURED",

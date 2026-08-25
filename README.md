@@ -19,7 +19,7 @@ advertising, or Seller Central data.
 Ask Codex's built-in installer to install `amazon-data` from this repository:
 
 ```text
-$skill-installer install amazon-data from https://github.com/asterism-software/glade-agent-skills
+$skill-installer install amazon-data from https://github.com/ricciflow-api/glade-agent-skills
 ```
 
 For repository-scoped use, copy or symlink the skill folder to
@@ -32,7 +32,7 @@ restart it if a newly installed skill does not appear.
 Clients compatible with the open agent-skills layout can install from GitHub:
 
 ```bash
-npx skills add asterism-software/glade-agent-skills
+npx skills add ricciflow-api/glade-agent-skills
 ```
 
 If your client uses a different installer, point it at
@@ -46,7 +46,7 @@ The preferred interface is the hosted Glade MCP server:
 https://gladeapi.com/api/mcp
 ```
 
-See [glade-mcp](https://github.com/asterism-software/glade-mcp) for client
+See [glade-mcp](https://github.com/ricciflow-api/glade-mcp) for client
 configuration. When MCP is unavailable, configure a Glade API key for the
 included REST helper:
 
@@ -87,8 +87,8 @@ Report security issues privately according to [SECURITY.md](SECURITY.md).
 
 ## Related repositories
 
-- [Glade API examples](https://github.com/asterism-software/glade-api-examples)
-- [Glade MCP](https://github.com/asterism-software/glade-mcp)
+- [Glade API examples](https://github.com/ricciflow-api/glade-api-examples)
+- [Glade MCP](https://github.com/ricciflow-api/glade-mcp)
 - [Glade API documentation](https://docs.gladeapi.com)
 
 ## License
