@@ -40,6 +40,11 @@ for operation, path in paths.items():
     assert f"`{operation}`" in operations
     assert f"`{path}`" in operations
 
+assert "PROJECTED_RUN_RATE" in operations
+assert "familyDeduplicationKey" in skill_text
+assert "sourceObservedAt" in skill_text
+assert "Never calculate current" in skill_text
+
 manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
 assert manifest["skills"] == [
     {

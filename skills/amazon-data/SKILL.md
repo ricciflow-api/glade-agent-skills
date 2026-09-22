@@ -63,6 +63,26 @@ development origin.
   search term or identifier.
 - Preserve marketplace-local currency. Do not imply currency conversion.
 
+### Interpret sales estimates
+
+- Treat `weeklyUnitSales`, `monthlyUnitSales`, and `annualUnitSales` as scaled
+  current-rank run-rate projections. They are not historical window totals or
+  seller-reported transactions.
+- Check `salesEstimate.status` before using unit fields. If it is
+  `UNAVAILABLE`, report `unavailableReason`; do not substitute zero.
+- Report `scope`. Deduplicate sibling ASINs only when
+  `familyDeduplicationKey` is present. Keep listings separate when scope is
+  `UNKNOWN`.
+- Treat `salesEstimate.scope` as the estimate aggregation boundary. Do not sum
+  siblings when it is `UNKNOWN`.
+- Preserve `dataFetchedAt`, `estimatedAt`, `sourceObservedAt`, and
+  `methodology.modelVersion`. A null `sourceObservedAt` with
+  `sourceObservationTimeAvailable: false` means neither timestamp is Amazon's
+  source-observation time.
+- State that independent calibration, confidence intervals, and historical
+  revenue are unavailable when the response says so. Never calculate current
+  price times projected units and present the result as actual seller revenue.
+
 ## Report results
 
 Include the marketplace, relevant ASIN or entity identifier, and freshness

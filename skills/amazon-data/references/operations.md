@@ -24,6 +24,23 @@ All operations accept an optional `domain` marketplace code that defaults to
 | `bestsellers` | `get_amazon_bestsellers` | `/api/amazon/bestsellers` | Exactly one of `categoryId`, `url`; optional `page`, `limit` |
 | `bestseller-categories` | `get_amazon_bestseller_categories` | `/api/amazon/bestseller-categories` | None |
 
+## Sales-estimate contract
+
+The `sales` operation returns a versioned `PROJECTED_RUN_RATE` derived from one
+current best-sellers-rank observation. It does not return historical 7-day,
+30-day, or 365-day sales totals.
+
+- Use unit fields only when `salesEstimate.status` is `AVAILABLE`.
+- Treat `UNAVAILABLE` plus `SALES_RANK_UNAVAILABLE` as missing input, not zero.
+- Use `familyDeduplicationKey` to group known siblings. Do not infer a family
+  when `scope` is `UNKNOWN`.
+- Do not sum siblings when `salesEstimate.scope` is `UNKNOWN`.
+- Preserve `dataFetchedAt`, `estimatedAt`, `sourceObservedAt`, and
+  `methodology.modelVersion`.
+- Independent calibration, confidence intervals, source-observation time, and
+  historical revenue are currently unavailable and are declared in the
+  response.
+
 ## Filters
 
 - `page`: integer from 1 through 100.
